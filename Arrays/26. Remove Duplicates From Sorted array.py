@@ -10,11 +10,16 @@ class Solution:
           return len(nums)
     
     # using two pointers
+    # In this approach we have a:
+        # Space complexity: O(1)
+        # Time complexity: O(n)
     def removeDuplicates2(self, nums: List[int]) -> int:
         position_index = 1
         
         for i in range (1, len(nums)):
             if nums[i] != nums[i - 1]:
                 nums[position_index] = nums[i]
-                iposition_index = position_index+ 1
+                position_index = position_index+ 1
         return position_index
+    
+    
